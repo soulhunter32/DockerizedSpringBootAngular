@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.iridiuz</groupId>
+	<artifactId>iridiuz-framework-parent</artifactId>
+	<version>0.0.1</version>
+	<packaging>pom</packaging>
+	<name>Iridiuz Framework Project - Parent</name>
+	<description>Iridiuz Framework Project - Angular 6 + Spring Boot</description>
+	<url>http://www.iridiuz.com</url>
+	
+	
+	<modules>
+        <module>client</module>
+        <module>server</module>
+    </modules>
+
+</project>

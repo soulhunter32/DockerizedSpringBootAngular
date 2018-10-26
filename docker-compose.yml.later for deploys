@@ -1,0 +1,29 @@
+version: '3' # specify docker-compose version
+
+labels: 
+  user: Sebastian Kapcitzky <sebastian.kapcitzky@iridiuz.com>
+
+# Define the services/containers to be run
+services:
+
+  backend: # name of the first service
+    #image: openjdk:8-jdk-alpine
+    build:
+      context: ./app/server
+      dockerfile: ../../dev/Dockerfile
+    ports:
+      - "8080:8080" # specify port of app
+      #- "5005:5005" # specify port for debug
+    entrypoint: 
+      - java
+      - -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005
+      - -jar
+      - /usr/src/iridiuz/app/iridiuz-framework.war
+
+  #server:
+  #  image: tomcat:8-jre8-alpine
+  #  ports: 
+  #    - "8080:8080"
+  #  volumes:
+  #    - ./app/server/target/iridiuz-framework.war:/usr/local/tomcat/webapps/ROOT.war
+  #    - ./app/server/target/iridiuz-framework:/usr/local/tomcat/webapps/ROOT
